@@ -29,16 +29,24 @@
         <label for="recipe-loc-type"
           >Is the recipe location a book or a website?</label
         >
-        <div id="recipe-loc-type">
-          <input type="radio" id="book" name="recipe-loc-type" value="Book" />
-          <label for="book">Book</label>
-          <input
-            type="radio"
-            id="website"
-            name="recipe-loc-type"
-            value="Website"
-          />
-          <label for="website">Website</label>
+        <div>
+          <div id="recipe-loc-type">
+            <input
+              type="radio"
+              id="book"
+              name="recipe-loc-type"
+              value="Book"
+              checked
+            />
+            <label for="book">Book</label>
+            <input
+              type="radio"
+              id="website"
+              name="recipe-loc-type"
+              value="Website"
+            />
+            <label for="website">Website</label>
+          </div>
         </div>
         <input type="submit" id="submit-recipe" value="Save Recipe Info" />
       </form>
