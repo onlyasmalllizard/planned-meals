@@ -26,6 +26,7 @@
           name="recipe-name"
           id="recipe-name"
           placeholder="Recipe Name"
+          required
         />
         <label for="recipe-loc-type"
           >Is the recipe location a book or a website?</label
@@ -44,17 +45,18 @@
             id="website"
             name="recipe-loc-type"
             value="Website"
+            required
           />
           <label for="website">Website</label>
         </div>
-        <label for="recipe-location"
+        <label for="recipe-location" id="recipe-location-label"
           >Enter the title of the book the recipe can be found in:</label
         >
         <input
           type="text"
           name="recipe-location"
           id="recipe-location"
-          placeholder="Recipe Location"
+          placeholder="Cookbook"
         />
         <input type="submit" id="submit-recipe" value="Save Recipe Info" />
       </form>

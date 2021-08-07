@@ -1,12 +1,30 @@
+const recipeList = document.querySelector('#recipe-list');
 const recipeName = document.querySelector('#recipe-name');
 const recipeLocation = document.querySelector('#recipe-location');
+const recipeLocationLabel = document.querySelector('#recipe-location-label');
 const recipeLocOptions = document.querySelectorAll(
   'input[name=recipe-loc-type]'
 );
-const submitButton = document.querySelector('#submit-recipe');
-const recipeList = document.querySelector('#recipe-list');
+recipeLocOptions.forEach((option) => {
+  option.addEventListener('click', updateRecipeLocationInput);
+});
 
+const submitButton = document.querySelector('#submit-recipe');
 submitButton.addEventListener('click', addRecipeToList);
+
+function updateRecipeLocationInput(event) {
+  if (event.target.value === 'Book') {
+    recipeLocation.type = 'text';
+    recipeLocation.placeholder = 'Cookbook';
+    recipeLocationLabel.innerText =
+      'Enter the title of the book the recipe can be found in:';
+  } else if (event.target.value === 'Website') {
+    recipeLocation.type = 'url';
+    recipeLocation.placeholder = 'https://example.com';
+    recipeLocationLabel.innerText =
+      'Enter the URL where the recipe can be found:';
+  }
+}
 
 function addRecipeToList(event) {
   event.preventDefault();
@@ -19,7 +37,7 @@ function addRecipeToList(event) {
 }
 
 function isFormComplete() {
-  if (!recipeName.value || !recipeLocation.value) {
+  if (!recipeName.checkValidity() || !recipeLocation.checkValidity()) {
     return false;
   }
   return true;
@@ -54,11 +72,7 @@ function createListItem(recipe, location) {
 
 function createLink(url, recipe) {
   const link = document.createElement('a');
-  let address = url;
-  if (url.startsWith('http') === false) {
-    address = `https://${url}`;
-  }
-  link.href = address;
+  link.href = url;
   link.innerText = recipe;
   return link;
 }
