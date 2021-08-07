@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Meals</title>
-</head>
-<body>
-    
-</body>
+  </head>
+  <body>
+    <main>
+      <h1>Hello, Meals!</h1>
+      <form id="recipe-entry">
+        <label for="recipe-name">Enter the name of the recipe:</label>
+        <input
+          type="text"
+          name="recipe-name"
+          id="recipe-name"
+          placeholder="Recipe Name"
+        />
+        <label for="recipe-location"
+          >Enter either the URL for the recipe or which book it's in:</label
+        >
+        <input
+          type="text"
+          name="recipe-location"
+          id="recipe-location"
+          placeholder="Recipe Location"
+        />
+        <label for="recipe-loc-type"
+          >Is the recipe location a book or a website?</label
+        >
+        <div id="recipe-loc-type">
+          <input type="radio" id="book" name="recipe-loc-type" value="Book" />
+          <label for="book">Book</label>
+          <input
+            type="radio"
+            id="website"
+            name="recipe-loc-type"
+            value="Website"
+          />
+          <label for="website">Website</label>
+        </div>
+        <input type="submit" id="submit-recipe" value="Save Recipe Info" />
+      </form>
+      <section>
+        <h2>Planned Recipes</h2>
+        <ul id="recipe-list"></ul>
+      </section>
+    </main>
+    <script src="./assets/scripts/index.js"></script>
+  </body>
 </html>
