@@ -1,4 +1,15 @@
 :root {
+  --white: #f5f5f5;
+  --background: #fae8eb;
+  --potential-dark: #904c77;
+  --yellow: #f7cb15;
+  --potential-dark-3: #582630;
+  --pale-yellow: #f7ee7f;
+  --potential-dark-4: #63474d;
+  --grey: #4c4c4c;
+  --light-grey: #808080;
+  --blue: #2c5784;
+  --purple: #5b1865;
 }
 
 html {
@@ -11,15 +22,21 @@ html {
   box-sizing: inherit;
 }
 
+body {
+  background: var(--background);
+}
+
 body,
 input {
   font-family: 'Glegoo', serif;
+  color: var(--potential-dark-3);
 }
 
 h1,
 h2 {
   font-family: 'Nanum Brush Script', cursive;
   letter-spacing: 0.1em;
+  color: var(--potential-dark-4);
 }
 
 h1 {
@@ -32,16 +49,38 @@ h2 {
   padding: 1em;
 }
 
+a {
+  color: var(--blue);
+}
+
+a:visited {
+  color: var(--purple);
+}
+
 p,
 input,
 label,
-li {
+li,
+legend {
   font-size: 1.2rem;
 }
 
 label,
-input[type='submit'] {
+input[type='submit'],
+legend {
   font-weight: 700;
+}
+
+input {
+  outline: none;
+}
+
+input:focus {
+  border: 3px solid var(--blue) !important;
+}
+
+label {
+  margin-right: 4em;
 }
 
 #recipe-entry {
@@ -50,7 +89,9 @@ input[type='submit'] {
 
   padding: 2em;
 
-  border: 1px solid black;
+  border-radius: 0 0 1em 1em;
+  box-shadow: 0.75em 0.5em 1.25em var(--light-grey);
+  background: var(--white);
 }
 
 @media only screen and (min-width: 64em) {
@@ -61,23 +102,52 @@ input[type='submit'] {
 
 #recipe-entry h2 {
   padding: 0;
+  margin-bottom: 0.5em;
 }
 
 #recipe-entry input[type='text'],
 #recipe-entry input[type='url'],
 #submit-recipe {
-  padding: 0.2em;
+  padding: 0.4em;
   border-radius: 0.75em;
 }
 
+#recipe-entry input[type='text'],
+#recipe-entry input[type='url'] {
+  border: 2px outset var(--potential-dark-3);
+}
+
+#submit-recipe {
+  margin: 2em 0 1em;
+  width: 40%;
+  justify-self: end;
+  background: var(--blue);
+  color: var(--white);
+}
+
 #recipe-loc-type input[type='radio'] {
-  margin-right: 1em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border-radius: 50%;
+
+  position: relative;
+  top: 2px;
+  width: 1em;
+  height: 1em;
+  border: 2px groove var(--potential-dark-3);
+  transition: 0.2s all linear;
+  margin: 1em 1em 0 0;
+}
+
+#recipe-loc-type input[type='radio']:checked {
+  border: 6px groove var(--potential-dark-3);
 }
 
 #recipe-loc-type {
-  display: grid;
-  align-items: center;
-  width: 15%;
+  border: none;
+  margin: 1em 0;
 }
 
 #recipe-loc-type label {
