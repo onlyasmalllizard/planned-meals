@@ -1,0 +1,2 @@
+# Planned Meals
+This is a site to let other household members know which recipes you've already purchased ingredients for. This means that anyone is able to find the recipe they need to start cooking without having to interrupt the others.
