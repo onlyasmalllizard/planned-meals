@@ -1,0 +1,91 @@
+:root {
+}
+
+html {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body,
+input {
+  font-family: 'Glegoo', serif;
+}
+
+h1,
+h2 {
+  font-family: 'Nanum Brush Script', cursive;
+  letter-spacing: 0.1em;
+}
+
+h1 {
+  font-size: 4rem;
+  padding: 1em;
+}
+
+h2 {
+  font-size: 3rem;
+  padding: 1em;
+}
+
+p,
+input,
+label,
+li {
+  font-size: 1.2rem;
+}
+
+label,
+input[type='submit'] {
+  font-weight: 700;
+}
+
+#recipe-entry {
+  display: grid;
+  grid-gap: 1em;
+
+  padding: 2em;
+
+  border: 1px solid black;
+}
+
+@media only screen and (min-width: 64em) {
+  #recipe-entry {
+    width: 60%;
+  }
+}
+
+#recipe-entry h2 {
+  padding: 0;
+}
+
+#recipe-entry input[type='text'],
+#recipe-entry input[type='url'],
+#submit-recipe {
+  padding: 0.2em;
+  border-radius: 0.75em;
+}
+
+#recipe-loc-type input[type='radio'] {
+  margin-right: 1em;
+}
+
+#recipe-loc-type {
+  display: grid;
+  align-items: center;
+  width: 15%;
+}
+
+#recipe-loc-type label {
+  grid-column: 2;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

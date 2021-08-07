@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Glegoo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Meals</title>
   </head>
   <body>
     <main>
       <h1>Hello, Meals!</h1>
       <form id="recipe-entry">
+        <h2>Enter a Recipe</h2>
         <label for="recipe-name">Enter the name of the recipe:</label>
         <input
           type="text"
@@ -17,8 +27,28 @@
           id="recipe-name"
           placeholder="Recipe Name"
         />
+        <label for="recipe-loc-type"
+          >Is the recipe location a book or a website?</label
+        >
+        <div id="recipe-loc-type">
+          <input
+            type="radio"
+            id="book"
+            name="recipe-loc-type"
+            value="Book"
+            checked
+          />
+          <label for="book">Book</label>
+          <input
+            type="radio"
+            id="website"
+            name="recipe-loc-type"
+            value="Website"
+          />
+          <label for="website">Website</label>
+        </div>
         <label for="recipe-location"
-          >Enter either the URL for the recipe or which book it's in:</label
+          >Enter the title of the book the recipe can be found in:</label
         >
         <input
           type="text"
@@ -26,28 +56,6 @@
           id="recipe-location"
           placeholder="Recipe Location"
         />
-        <label for="recipe-loc-type"
-          >Is the recipe location a book or a website?</label
-        >
-        <div>
-          <div id="recipe-loc-type">
-            <input
-              type="radio"
-              id="book"
-              name="recipe-loc-type"
-              value="Book"
-              checked
-            />
-            <label for="book">Book</label>
-            <input
-              type="radio"
-              id="website"
-              name="recipe-loc-type"
-              value="Website"
-            />
-            <label for="website">Website</label>
-          </div>
-        </div>
         <input type="submit" id="submit-recipe" value="Save Recipe Info" />
       </form>
       <section>
