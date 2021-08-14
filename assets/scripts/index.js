@@ -1,4 +1,5 @@
 const recipeEntry = document.querySelector('#recipe-entry');
+const recipesSection = document.querySelector('#planned-recipes');
 const recipeList = document.querySelector('#recipe-list');
 const recipeName = document.querySelector('#recipe-name');
 const recipeLocation = document.querySelector('#recipe-location');
@@ -12,6 +13,24 @@ recipeLocOptions.forEach((option) => {
 
 const submitButton = document.querySelector('#submit-recipe');
 submitButton.addEventListener('click', addRecipeToList);
+
+const entryMenuButton = document.querySelector('#r-entry-menu');
+
+entryMenuButton.addEventListener('click', goToRecipeEntryPage);
+
+function goToRecipeEntryPage() {
+  recipesSection.style.display = 'none';
+  recipeEntry.style.display = 'grid';
+}
+
+const listMenuButton = document.querySelector('#r-list-menu');
+
+listMenuButton.addEventListener('click', goToRecipesList);
+
+function goToRecipesList() {
+  recipeEntry.style.display = 'none';
+  recipesSection.style.display = 'grid';
+}
 
 function updateRecipeLocationInput(event) {
   if (event.target.value === 'Book') {

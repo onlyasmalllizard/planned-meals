@@ -211,10 +211,6 @@ main {
   margin: 1em 0;
 }
 
-#recipe-loc-type label {
-  grid-column: 2;
-}
-
 #planned-recipes {
   display: none;
 }
@@ -228,4 +224,15 @@ fieldset {
 
 legend {
   grid-column: 1 / span 2;
+}
+
+@media only screen and (min-width: 64em) {
+  fieldset {
+    grid-template-columns: repeat(4, max-content);
+    grid-template-rows: repeat(2, max-content);
+  }
+
+  legend {
+    grid-column: 1 / span 4;
+  }
 }
