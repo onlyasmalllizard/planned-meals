@@ -1,3 +1,4 @@
+const recipeEntry = document.querySelector('#recipe-entry');
 const recipeList = document.querySelector('#recipe-list');
 const recipeName = document.querySelector('#recipe-name');
 const recipeLocation = document.querySelector('#recipe-location');
@@ -20,7 +21,7 @@ function updateRecipeLocationInput(event) {
       'Enter the title of the book the recipe can be found in:';
   } else if (event.target.value === 'Website') {
     recipeLocation.type = 'url';
-    recipeLocation.placeholder = 'https://example.com';
+    recipeLocation.placeholder = 'https://recipewebsite.com/recipe';
     recipeLocationLabel.innerText =
       'Enter the URL where the recipe can be found:';
   }

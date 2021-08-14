@@ -16,10 +16,13 @@
     <title>Meals</title>
   </head>
   <body>
+    <nav>
+      <button>Recipe Entry</button>
+      <button>Recipe List</button>
+    </nav>
     <main>
-      <h1>Hello, Meals!</h1>
       <form id="recipe-entry">
-        <h2>Enter a Recipe</h2>
+        <h1>Enter a Recipe</h1>
         <label for="recipe-name">Enter the name of the recipe:</label>
         <input
           type="text"
@@ -58,8 +61,8 @@
         />
         <input type="submit" id="submit-recipe" value="Save Recipe Info" />
       </form>
-      <section>
-        <h2>Planned Recipes</h2>
+      <section id="planned-recipes">
+        <h1>Recipe List</h1>
         <ul id="recipe-list"></ul>
       </section>
     </main>

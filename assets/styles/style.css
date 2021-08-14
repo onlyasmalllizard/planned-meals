@@ -24,29 +24,72 @@ html {
 
 body {
   background: var(--background);
+  display: grid;
+}
+
+@media only screen and (min-width: 48em) {
+  body {
+    grid-template-columns: max-content minmax(min-content, max-content) 1fr;
+  }
+}
+
+@media only screen and (min-width: 64em) {
+  body {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
 }
 
 body,
-input {
+input,
+button {
   font-family: 'Glegoo', serif;
   color: var(--potential-dark-3);
 }
 
-h1,
-h2 {
+h1 {
   font-family: 'Nanum Brush Script', cursive;
   letter-spacing: 0.1em;
   color: var(--potential-dark-4);
-}
-
-h1 {
-  font-size: 4rem;
-  padding: 1em;
-}
-
-h2 {
   font-size: 3rem;
-  padding: 1em;
+}
+
+nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  background: #f7dbe0;
+}
+
+@media only screen and (min-width: 48em) {
+  nav {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(100px, max-content));
+    height: 100%;
+    padding: 1em;
+  }
+}
+
+nav button {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+
+  padding: 1em 0.5em;
+
+  background: var(--blue);
+  color: var(--white);
+  border: 2px inset var(--white);
+}
+
+@media only screen and (min-width: 48em) {
+  nav button {
+    padding: 0 0.5em;
+  }
+}
+
+nav button:hover,
+nav button:focus {
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 a {
@@ -62,7 +105,17 @@ input,
 label,
 li,
 legend {
-  font-size: 1.2rem;
+  font-size: 1rem;
+}
+
+@media only screen and (min-width: 48em) {
+  p,
+  input,
+  label,
+  li,
+  legend {
+    font-size: 1.2rem;
+  }
 }
 
 label,
@@ -71,32 +124,25 @@ legend {
   font-weight: 700;
 }
 
-input {
-  outline: none;
-}
-
-input:focus {
-  border: 3px solid var(--blue) !important;
-}
-
 label {
   margin-right: 4em;
+}
+
+main {
+  box-shadow: 0.75em 0.5em 1.25em var(--light-grey);
+  background: var(--white);
 }
 
 #recipe-entry {
   display: grid;
   grid-gap: 1em;
 
-  padding: 2em;
-
-  border-radius: 0 0 1em 1em;
-  box-shadow: 0.75em 0.5em 1.25em var(--light-grey);
-  background: var(--white);
+  padding: 0.75em;
 }
 
-@media only screen and (min-width: 64em) {
+@media only screen and (min-width: 48em) {
   #recipe-entry {
-    width: 60%;
+    padding: 2em;
   }
 }
 
@@ -119,10 +165,25 @@ label {
 
 #submit-recipe {
   margin: 2em 0 1em;
-  width: 40%;
   justify-self: end;
   background: var(--blue);
   color: var(--white);
+  border: 2px outset var(--white);
+}
+
+#submit-recipe:hover,
+#submit-recipe:focus {
+  cursor: pointer;
+}
+
+#submit-recipe:active {
+  border: 2px inset var(--white);
+}
+
+@media only screen and (min-width: 48em) {
+  #submit-recipe {
+    width: 40%;
+  }
 }
 
 #recipe-loc-type input[type='radio'] {
@@ -154,8 +215,17 @@ label {
   grid-column: 2;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#planned-recipes {
+  display: none;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1em repeat(2, max-content);
+  align-items: baseline;
+}
+
+legend {
+  grid-column: 1 / span 2;
 }
