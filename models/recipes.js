@@ -7,12 +7,10 @@ async function getAllRecipes() {
 
 async function addRecipeToDb(recipe) {
   const response = await query(
-    'INSERT INTO recipes (name, source) VALUES ($1, $2);',
+    'INSERT INTO recipes (name, source) VALUES ($1, $2) RETURNING *;',
     [recipe.name, recipe.source]
   );
-  if (response) {
-    console.log(`${recipe.name} added to database.`);
-  }
+  return response.rows[0];
 }
 
 module.exports = {
