@@ -52,7 +52,7 @@ function addRecipeToList(event) {
     alert('Please complete all fields in the form!');
     return;
   }
-  createListItem(recipeName.value, recipeLocation.value);
+  addRecipeToDB({ name: recipeName.value, source: recipeLocation.value });
   resetForm();
 }
 
