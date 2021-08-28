@@ -1,12 +1,12 @@
-const { query } = require('../db/index');
+const pool = require('../db/index');
 
 async function getAllRecipes() {
-  const response = await query('SELECT * FROM recipes');
+  const response = await pool.query('SELECT * FROM recipes');
   return response.rows;
 }
 
-async function addRecipeToDb(recipe) {
-  const response = await query(
+async function createRecipe(recipe) {
+  const response = await pool.query(
     'INSERT INTO recipes (name, source) VALUES ($1, $2) RETURNING *;',
     [recipe.name, recipe.source]
   );
@@ -15,5 +15,5 @@ async function addRecipeToDb(recipe) {
 
 module.exports = {
   getAllRecipes,
-  addRecipeToDb,
+  createRecipe,
 };

@@ -1,9 +1,9 @@
-const { query } = require('../index');
+const pool = require('../index');
 
 async function createRecipeDb() {
   const queryString =
     'CREATE TABLE IF NOT EXISTS recipes (id SERIAL PRIMARY KEY, name TEXT NOT NULL, source TEXT NOT NULL, house INTEGER, postedby INTEGER);';
-  const response = await query(queryString);
+  const response = await pool.query(queryString);
 
   if (response) {
     console.log('Recipes table created');
