@@ -39,8 +39,6 @@ describe('GET requests', () => {
       ];
     });
 
-    console.log(recipesModel.getRecipesByUser());
-
     // Act
     const actual = await request(app).get(`/recipes?user=${user}`);
 

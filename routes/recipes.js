@@ -101,7 +101,7 @@ router.put('/:id', async (req, res) => {
       payload: data,
     });
   } catch (error) {
-    if (error.message.includes('violates')) {
+    if (error.message.toLowerCase().includes('violates')) {
       res.status(400).json({
         success: false,
         message: 'PUT request failed',
