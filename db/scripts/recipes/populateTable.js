@@ -5,7 +5,10 @@ const recipes = require('../../../dummy-data/recipes-data');
 async function populateTable(data) {
   for (let recipe of data) {
     const sqlQuery = format(
-      'INSERT INTO recipes (name, source, postedby) VALUES (%L, %L, %L) RETURNING *;',
+      `INSERT INTO recipes
+      (name, source, postedby)
+      VALUES (%L, %L, %L)
+      RETURNING *;`,
       recipe.name,
       recipe.source,
       recipe.postedby

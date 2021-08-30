@@ -1,12 +1,11 @@
 const pool = require('../../index');
 
-async function deleteRecipeDb() {
-  const queryString = 'DROP TABLE IF EXISTS recipes;';
-  const response = await pool.query(queryString);
+async function deleteTable() {
+  const response = await pool.query('DROP TABLE IF EXISTS recipes;');
 
   if (response) {
     console.log('Recipe table deleted');
   }
 }
 
-deleteRecipeDb();
+deleteTable();
