@@ -7,6 +7,7 @@
     "start": "node -r dotenv/config app.js",
     "test": "jest",
     "dev": "nodemon -r dotenv/config server.js",
+    "dbresetalltables": "npm run dbresethouseholdtable && npm run dbresetuserstable && npm run dbresetrecipetable",
     "dbcreaterecipetable": "node -r dotenv/config ./db/scripts/recipes/createTable.js",
     "dbpopulaterecipetable": "node -r dotenv/config ./db/scripts/recipes/populateTable.js",
     "dbdeleterecipetable": "node -r dotenv/config ./db/scripts/recipes/deleteTable.js",
@@ -14,7 +15,11 @@
     "dbcreatehouseholdtable": "node -r dotenv/config ./db/scripts/households/createTable.js",
     "dbdeletehouseholdtable": "node -r dotenv/config ./db/scripts/households/deleteTable.js",
     "dbpopulatehouseholdtable": "node -r dotenv/config ./db/scripts/households/populateTable.js",
-    "dbresethouseholdtable": "npm run dbdeletehouseholdtable && npm run dbcreatehouseholdtable && npm run dbpopulatehouseholdtable"
+    "dbresethouseholdtable": "npm run dbdeletehouseholdtable && npm run dbcreatehouseholdtable && npm run dbpopulatehouseholdtable",
+    "dbcreateuserstable": "node -r dotenv/config ./db/scripts/users/createTable.js",
+    "dbdeleteuserstable": "node -r dotenv/config ./db/scripts/users/deleteTable.js",
+    "dbpopulateuserstable": "node -r dotenv/config ./db/scripts/users/populateTable.js",
+    "dbresetuserstable": "npm run dbdeleteuserstable && npm run dbcreateuserstable && npm run dbpopulateuserstable"
   },
   "repository": {
     "type": "git",

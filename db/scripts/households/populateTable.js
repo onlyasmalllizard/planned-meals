@@ -15,7 +15,7 @@ async function populateTable(data) {
     ]);
     console.log(response.rows[0]);
   }
-  console.log('Recipes table populated');
+  console.log('Households table populated');
 }
 
 populateTable(households);
