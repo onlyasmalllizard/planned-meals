@@ -1,4 +1,4 @@
-const pool = require('../index');
+const pool = require('../../index');
 
 async function deleteRecipeDb() {
   const queryString = 'DROP TABLE IF EXISTS recipes;';

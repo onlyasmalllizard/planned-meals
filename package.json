@@ -7,9 +7,10 @@
     "start": "node -r dotenv/config app.js",
     "test": "jest",
     "dev": "nodemon -r dotenv/config server.js",
-    "dbcreaterecipetable": "node -r dotenv/config ./db/scripts/createRecipeDb.js",
-    "dbdeleterecipetable": "node -r dotenv/config ./db/scripts/deleteRecipeDb.js",
-    "dbresetrecipetable": "npm run dbdeleterecipetable && npm run dbcreaterecipetable.js"
+    "dbcreaterecipetable": "node -r dotenv/config ./db/scripts/recipes/createTable.js",
+    "dbpopulaterecipetable": "node -r dotenv/config ./db/scripts/recipes/populateTable.js",
+    "dbdeleterecipetable": "node -r dotenv/config ./db/scripts/recipes/deleteTable.js",
+    "dbresetrecipetable": "npm run dbdeleterecipetable && npm run dbcreaterecipetable && npm run dbpopulaterecipetable"
   },
   "repository": {
     "type": "git",

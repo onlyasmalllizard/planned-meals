@@ -1,4 +1,4 @@
-const pool = require('../index');
+const pool = require('../../index');
 
 async function createRecipeDb() {
   const queryString =
