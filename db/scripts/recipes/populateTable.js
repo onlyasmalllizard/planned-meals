@@ -1,6 +1,6 @@
 const pool = require('../../index');
 const format = require('pg-format');
-const recipes = require('../../../dummy-data/recipes-data');
+const recipes = require('../../../sample-data/recipes-data');
 
 async function populateTable(data) {
   for (let recipe of data) {

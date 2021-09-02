@@ -1,5 +1,5 @@
 const pool = require('../../index');
-const users = require('../../../dummy-data/users-data');
+const users = require('../../../sample-data/users-data');
 
 async function populateTable(data) {
   for (let user of data) {
